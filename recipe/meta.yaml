@@ -43,6 +43,9 @@ requirements:
         - python
 
 test:
+    requires:
+        - python
+        - pytest
     imports:
         - pycrfsuite
 

@@ -1,7 +1,7 @@
 About python-crfsuite
 =====================
 
-Home: https://github.com/tpeng/python-crfsuite
+Home: https://python-crfsuite.readthedocs.io/en/latest/
 
 Package license: MIT
 

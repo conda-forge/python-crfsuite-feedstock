@@ -1,60 +1,51 @@
 {% set name = "python-crfsuite" %}
-{% set version = "0.9.2" %}
-{% set hashtype = "sha256" %}
-{% set hash = "e5e14c303b71706a7c6c445227129e305e22fc548d441d838311d99efd645342" %}
+{% set version = "0.9.5" %}
+{% set sha256 = "47f10949a003439cdb7922b43177c96c2c1eea5c56ed2d17270c850bc86ccab3" %}
 
 package:
-  name: {{ name }}
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  {{ hashtype }}: {{ hash }}
-  patches:
-    - vc14-no-redefine-macro.patch  # [win]
+  sha256: {{ sha256 }}
 
 build:
-    number: 0
-    script:
-        - python setup.py install --single-version-externally-managed --record record.txt
-    features:
-        - vc9   # [win and py27]
-        - vc14  # [win and py>=35]
+  number: 0
+  script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
-    build:
-        - python
-        - setuptools
-        - toolchain
-        - msinttypes  # [win and py27]
-    run:
-        - python
+  build:
+    - {{ compiler('c') }}
+    - msinttypes  # [win and py27]
+  host:
+    - python
+    - pip
+  run:
+    - python
 
 test:
-    requires:
-        - pytest
-
-    source_files:
-        - tests
-
-    commands:
-        - py.test -v tests
-
-        - conda inspect linkages {{ name }}  # [unix]
-        - conda inspect objects {{ name }}   # [osx]
+  requires:
+    - pytest
+  source_files:
+    - tests
+  commands:
+    - pytest -v tests
+    - conda inspect linkages {{ name }}  # [unix]
+    - conda inspect objects {{ name }}   # [osx]
 
 about:
-    home: https://github.com/scrapinghub/python-crfsuite
-    license: MIT
-    license_family: MIT
-    license_file: LICENSE.txt
-    summary: Python binding for CRFsuite
-    doc_url: https://python-crfsuite.readthedocs.io/en/latest/
-    dev_url: https://github.com/scrapinghub/python-crfsuite
+  home: https://github.com/scrapinghub/python-crfsuite
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE.txt
+  summary: Python binding for CRFsuite
+  doc_url: https://python-crfsuite.readthedocs.io/en/latest/
+  dev_url: https://github.com/scrapinghub/python-crfsuite
 
 extra:
-    recipe-maintainers:
-        - wyseguy7
-        - ericdill
-        - rmax
+  recipe-maintainers:
+    - wyseguy7
+    - ericdill
+    - rmax
+    - mcs07

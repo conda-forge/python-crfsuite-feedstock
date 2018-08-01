@@ -1,6 +1,6 @@
 {% set name = "python-crfsuite" %}
-{% set version = "0.9.5" %}
-{% set sha256 = "47f10949a003439cdb7922b43177c96c2c1eea5c56ed2d17270c850bc86ccab3" %}
+{% set version = "0.9.6" %}
+{% set sha256 = "a56d2b38e257614b1006c04fb9b0e22c63a177add487e5a64e8eb61f038342cd" %}
 
 package:
   name: {{ name|lower }}

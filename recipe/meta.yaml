@@ -31,8 +31,6 @@ test:
     - tests
   commands:
     - pytest -v tests
-    - conda inspect linkages {{ name }}  # [unix]
-    - conda inspect objects {{ name }}   # [osx]
 
 about:
   home: https://github.com/scrapinghub/python-crfsuite

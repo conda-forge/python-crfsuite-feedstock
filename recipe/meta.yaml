@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 2
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -31,8 +31,6 @@ test:
     - tests
   commands:
     - pytest -v tests
-    - conda inspect linkages {{ name }}  # [unix]
-    - conda inspect objects {{ name }}   # [osx]
 
 about:
   home: https://github.com/scrapinghub/python-crfsuite

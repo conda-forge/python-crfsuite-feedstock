@@ -17,7 +17,6 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}
-    - msinttypes  # [win and py27]
   host:
     - python
     - pip

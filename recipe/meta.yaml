@@ -1,6 +1,6 @@
 {% set name = "python-crfsuite" %}
-{% set version = "0.9.8" %}
-{% set sha256 = "0e03cf6eba3628717ccf06dfa0f4a2ba8628860adb174cbfd250a7a4692865a1" %}
+{% set version = "0.9.9" %}
+{% set sha256 = "caa6261d6955466756f986b7fcfbd4fd50622963e3bdb5cc180c129c62b3a76d" %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:

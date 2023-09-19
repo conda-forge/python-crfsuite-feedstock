@@ -1,11 +1,11 @@
-About python-crfsuite
-=====================
+About python-crfsuite-feedstock
+===============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/python-crfsuite-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/scrapinghub/python-crfsuite
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/python-crfsuite-feedstock/blob/main/LICENSE.txt)
 
 Summary: Python binding for CRFsuite
 

@@ -1,0 +1,17 @@
+@echo on
+
+del pycrfsuite/_pycrfsuite.cpp
+if %errorlevel% neq 0 exit /b %errorlevel%
+
+pushd pycrfsuite
+
+echo "# distutils: language = c++" > _pycrfsuite.pyx.tmp
+type _pycrfsuite.pyx >> _pycrfsuite.pyx.tmp
+move _pycrfsuite.pyx.tmp _pycrfsuite.pyx
+cythonize _pycrfsuite.pyx
+if %errorlevel% neq 0 exit /b %errorlevel%
+
+popd
+
+%PYTHON% -m pip install -vvv .
+if %errorlevel% neq 0 exit /b %errorlevel%

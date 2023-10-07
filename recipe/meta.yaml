@@ -1,6 +1,5 @@
 {% set name = "python-crfsuite" %}
 {% set version = "0.9.9" %}
-{% set sha256 = "caa6261d6955466756f986b7fcfbd4fd50622963e3bdb5cc180c129c62b3a76d" %}
 
 package:
   name: {{ name|lower }}
@@ -8,11 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: caa6261d6955466756f986b7fcfbd4fd50622963e3bdb5cc180c129c62b3a76d
 
 build:
   number: 2
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
@@ -21,6 +19,7 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - python
+    - cython <3
     - pip
   run:
     - python

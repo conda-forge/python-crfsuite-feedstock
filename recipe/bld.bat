@@ -1,9 +1,9 @@
 @echo on
 
-del pycrfsuite/_pycrfsuite.cpp
-if %errorlevel% neq 0 exit /b %errorlevel%
-
 pushd pycrfsuite
+
+del _pycrfsuite.cpp
+if %errorlevel% neq 0 exit /b %errorlevel%
 
 echo "# distutils: language = c++" > _pycrfsuite.pyx.tmp
 type _pycrfsuite.pyx >> _pycrfsuite.pyx.tmp

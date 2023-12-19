@@ -1,5 +1,5 @@
 {% set name = "python-crfsuite" %}
-{% set version = "0.9.9" %}
+{% set version = "0.9.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: caa6261d6955466756f986b7fcfbd4fd50622963e3bdb5cc180c129c62b3a76d
+  sha256: f38524631e2b533341f10f2c77689270dc6ecd5985495dccf7aa37b1045bc2e5
 
 build:
-  number: 2
+  number: 0
 
 requirements:
   build:

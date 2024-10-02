@@ -1,22 +1,23 @@
 {% set name = "python-crfsuite" %}
-{% set version = "0.9.9" %}
+{% set version = "0.9.11" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: caa6261d6955466756f986b7fcfbd4fd50622963e3bdb5cc180c129c62b3a76d
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 6eff965ca70567396d822c9a35ea74b0f7edb27d9471524997bdabe7a6da5f5a
 
 build:
-  number: 2
+  number: 0
 
 requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - cython <3

@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
+schema_version: 1
+
+context:
+  version: "0.9.11"
+
+package:
+  name: python-crfsuite
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/p/python-crfsuite/python_crfsuite-${{ version }}.tar.gz
+  sha256: 6eff965ca70567396d822c9a35ea74b0f7edb27d9471524997bdabe7a6da5f5a
+
+build:
+  number: 3
+  script:
+    file: build-pycrfsuite
+
+requirements:
+  build:
+    - ${{ compiler("c") }}
+    - ${{ compiler("cxx") }}
+    - ${{ stdlib("c") }}
+    - if: build_platform != target_platform
+      then:
+        - python
+        - cross-python_${{ target_platform }}
+  host:
+    - cython
+    - pip
+    - python
+    - setuptools >=42
+  run:
+    - python
+
+tests:
+  - python:
+      imports: pycrfsuite
+      pip_check: true
+  - files:
+      source:
+        - tests/
+    requirements:
+      run:
+        - pytest-cov
+    script:
+      - coverage run --source=pycrfsuite --branch -m pytest -vv --tb=long --color=yes
+      - coverage report --show-missing --skip-covered --fail-under=100
+
+about:
+  license: MIT
+  license_file:
+    - LICENSE.txt
+    - liblbfgs/COPYING
+    - crfsuite/COPYING
+  summary: Python binding for CRFsuite
+  homepage: https://github.com/scrapinghub/python-crfsuite
+  repository: https://github.com/scrapinghub/python-crfsuite
+  documentation: https://python-crfsuite.readthedocs.io/en/latest/
+
+extra:
+  recipe-maintainers:
+    - wyseguy7
+    - rmax
+    - mcs07

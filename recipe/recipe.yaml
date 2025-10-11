@@ -27,6 +27,7 @@ requirements:
       then:
         - python
         - cross-python_${{ target_platform }}
+        - cython
   host:
     - cython
     - pip

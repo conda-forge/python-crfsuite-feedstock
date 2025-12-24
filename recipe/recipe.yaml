@@ -28,6 +28,7 @@ requirements:
         - cross-python_${{ target_platform }}
         - cython
         - python
+        - setuptools >=42
   host:
     - cython
     - pip

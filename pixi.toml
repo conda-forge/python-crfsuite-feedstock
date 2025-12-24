@@ -9,7 +9,7 @@ version = "3.54.1"  # conda-smithy version used to generate this file
 description = "Pixi configuration for conda-forge/python-crfsuite-feedstock"
 authors = ["@conda-forge/python-crfsuite"]
 channels = ["conda-forge"]
-platforms = ["linux-64", "linux-aarch64", "linux-ppc64le", "osx-64", "win-64"]
+platforms = ["linux-64", "osx-64", "win-64"]
 requires-pixi = ">=0.59.0"
 
 [dependencies]
@@ -53,6 +53,12 @@ description = "Build python-crfsuite-feedstock with variant linux_64_python3.14.
 [tasks."inspect-linux_64_python3.14.____cp314"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_python3.14.____cp314.yaml"
 description = "List contents of python-crfsuite-feedstock packages built for variant linux_64_python3.14.____cp314"
+[tasks."build-linux_64_python3.14.____cp314t"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_python3.14.____cp314t.yaml"
+description = "Build python-crfsuite-feedstock with variant linux_64_python3.14.____cp314t directly (without setup scripts)"
+[tasks."inspect-linux_64_python3.14.____cp314t"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_python3.14.____cp314t.yaml"
+description = "List contents of python-crfsuite-feedstock packages built for variant linux_64_python3.14.____cp314t"
 [tasks."build-linux_aarch64_python3.10.____cpython"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_python3.10.____cpython.yaml"
 description = "Build python-crfsuite-feedstock with variant linux_aarch64_python3.10.____cpython directly (without setup scripts)"
@@ -83,6 +89,12 @@ description = "Build python-crfsuite-feedstock with variant linux_aarch64_python
 [tasks."inspect-linux_aarch64_python3.14.____cp314"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_python3.14.____cp314.yaml"
 description = "List contents of python-crfsuite-feedstock packages built for variant linux_aarch64_python3.14.____cp314"
+[tasks."build-linux_aarch64_python3.14.____cp314t"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_python3.14.____cp314t.yaml"
+description = "Build python-crfsuite-feedstock with variant linux_aarch64_python3.14.____cp314t directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_python3.14.____cp314t"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_python3.14.____cp314t.yaml"
+description = "List contents of python-crfsuite-feedstock packages built for variant linux_aarch64_python3.14.____cp314t"
 [tasks."build-linux_ppc64le_python3.10.____cpython"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_python3.10.____cpython.yaml"
 description = "Build python-crfsuite-feedstock with variant linux_ppc64le_python3.10.____cpython directly (without setup scripts)"
@@ -113,6 +125,12 @@ description = "Build python-crfsuite-feedstock with variant linux_ppc64le_python
 [tasks."inspect-linux_ppc64le_python3.14.____cp314"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_python3.14.____cp314.yaml"
 description = "List contents of python-crfsuite-feedstock packages built for variant linux_ppc64le_python3.14.____cp314"
+[tasks."build-linux_ppc64le_python3.14.____cp314t"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_python3.14.____cp314t.yaml"
+description = "Build python-crfsuite-feedstock with variant linux_ppc64le_python3.14.____cp314t directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_python3.14.____cp314t"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_python3.14.____cp314t.yaml"
+description = "List contents of python-crfsuite-feedstock packages built for variant linux_ppc64le_python3.14.____cp314t"
 [tasks."build-osx_64_python3.10.____cpython"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_python3.10.____cpython.yaml"
 description = "Build python-crfsuite-feedstock with variant osx_64_python3.10.____cpython directly (without setup scripts)"
@@ -143,6 +161,12 @@ description = "Build python-crfsuite-feedstock with variant osx_64_python3.14.__
 [tasks."inspect-osx_64_python3.14.____cp314"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_python3.14.____cp314.yaml"
 description = "List contents of python-crfsuite-feedstock packages built for variant osx_64_python3.14.____cp314"
+[tasks."build-osx_64_python3.14.____cp314t"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_python3.14.____cp314t.yaml"
+description = "Build python-crfsuite-feedstock with variant osx_64_python3.14.____cp314t directly (without setup scripts)"
+[tasks."inspect-osx_64_python3.14.____cp314t"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_python3.14.____cp314t.yaml"
+description = "List contents of python-crfsuite-feedstock packages built for variant osx_64_python3.14.____cp314t"
 [tasks."build-osx_arm64_python3.10.____cpython"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_python3.10.____cpython.yaml"
 description = "Build python-crfsuite-feedstock with variant osx_arm64_python3.10.____cpython directly (without setup scripts)"
@@ -173,6 +197,12 @@ description = "Build python-crfsuite-feedstock with variant osx_arm64_python3.14
 [tasks."inspect-osx_arm64_python3.14.____cp314"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_python3.14.____cp314.yaml"
 description = "List contents of python-crfsuite-feedstock packages built for variant osx_arm64_python3.14.____cp314"
+[tasks."build-osx_arm64_python3.14.____cp314t"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_python3.14.____cp314t.yaml"
+description = "Build python-crfsuite-feedstock with variant osx_arm64_python3.14.____cp314t directly (without setup scripts)"
+[tasks."inspect-osx_arm64_python3.14.____cp314t"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_python3.14.____cp314t.yaml"
+description = "List contents of python-crfsuite-feedstock packages built for variant osx_arm64_python3.14.____cp314t"
 [tasks."build-win_64_python3.10.____cpython"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_python3.10.____cpython.yaml"
 description = "Build python-crfsuite-feedstock with variant win_64_python3.10.____cpython directly (without setup scripts)"
@@ -203,6 +233,12 @@ description = "Build python-crfsuite-feedstock with variant win_64_python3.14.__
 [tasks."inspect-win_64_python3.14.____cp314"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_64_python3.14.____cp314.yaml"
 description = "List contents of python-crfsuite-feedstock packages built for variant win_64_python3.14.____cp314"
+[tasks."build-win_64_python3.14.____cp314t"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_python3.14.____cp314t.yaml"
+description = "Build python-crfsuite-feedstock with variant win_64_python3.14.____cp314t directly (without setup scripts)"
+[tasks."inspect-win_64_python3.14.____cp314t"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_64_python3.14.____cp314t.yaml"
+description = "List contents of python-crfsuite-feedstock packages built for variant win_64_python3.14.____cp314t"
 
 [feature.smithy.dependencies]
 conda-smithy = "*"
@@ -221,7 +257,7 @@ description = "Lint the feedstock recipe"
 
 [feature.shellcheck]
 dependencies.shellcheck = "*"
-platforms = ["linux-64", "linux-aarch64", "osx-64", "win-64"]
+platforms = ["linux-64", "osx-64", "win-64"]
 
 [environments]
 smithy = ["shellcheck", "smithy"]

@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.9.11"
+  version: "0.9.12"
   cov_fail_under: "91"
 
 package:
@@ -11,10 +11,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/p/python-crfsuite/python_crfsuite-${{ version }}.tar.gz
-  sha256: 6eff965ca70567396d822c9a35ea74b0f7edb27d9471524997bdabe7a6da5f5a
+  sha256: db37fccc3bd8f0c49c28a7697ca79c89d67b3fd5bf119122866169240ac4c480
 
 build:
-  number: 3
+  number: 0
   script:
     file: build-pycrfsuite
 
@@ -25,9 +25,10 @@ requirements:
     - ${{ stdlib("c") }}
     - if: build_platform != target_platform
       then:
-        - python
         - cross-python_${{ target_platform }}
         - cython
+        - python
+        - setuptools >=42
   host:
     - cython
     - pip

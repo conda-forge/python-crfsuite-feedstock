@@ -14,7 +14,7 @@ source:
   sha256: db37fccc3bd8f0c49c28a7697ca79c89d67b3fd5bf119122866169240ac4c480
 
 build:
-  number: 0
+  number: 1
   script:
     file: build-pycrfsuite
 
